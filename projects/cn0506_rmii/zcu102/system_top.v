@@ -84,6 +84,11 @@ module system_top (
   wire    [94:0]  gpio_i;
   wire    [94:0]  gpio_o;
 
+  wire            sys_reset_a;
+  wire            sys_reset_b;
+  wire            gpio_reset_a;
+  wire            gpio_reset_b;
+
   // port a - right led (activity/status) yellow only
 
   assign led_ar_c_c2m = led_0_a;
@@ -105,6 +110,12 @@ module system_top (
   assign led_bl_a_c2m = 1'b0;
 
   assign gpio_i[94:36] = gpio_o[94:36];
+
+  assign gpio_reset_a = gpio_o[37];
+  assign gpio_reset_b = gpio_o[36];
+
+  assign reset_a = sys_reset_a | gpio_reset_a;
+  assign reset_b = sys_reset_b | gpio_reset_b;
 
   assign gpio_i[35] = link_st_a;
   assign gpio_i[34] = link_st_b;
@@ -131,8 +142,8 @@ module system_top (
     .spi1_mosi (),
     .spi1_sclk (),
 
-    .reset_a (reset_a),
-    .reset_b (reset_b),
+    .reset_a (sys_reset_a),
+    .reset_b (sys_reset_b),
     .ref_clk_50_a (rmii_rx_ref_clk_a),
     .ref_clk_50_b (rmii_rx_ref_clk_b),
 
