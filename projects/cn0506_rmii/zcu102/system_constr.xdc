@@ -1,7 +1,8 @@
 
 set_property -dict {PACKAGE_PIN AJ6  IOSTANDARD LVCMOS18} [get_ports rmii_rx_ref_clk_a]            ; ## D08 FMC_HPC1_LA01_CC_P
-set_property -dict {PACKAGE_PIN AJ5  IOSTANDARD LVCMOS18} [get_ports rmii_rx_er_a]                 ; ## D09  FMC_HPC1_LA01_CC_N
-set_property -dict {PACKAGE_PIN AE4  IOSTANDARD LVCMOS18} [get_ports rmii_rx_dv_a]                 ; ## H14 FMC_HPC1_LA07_N
+set_property -dict {PACKAGE_PIN AJ5  IOSTANDARD LVCMOS18} [get_ports rmii_rx_er_a]                 ; ## D09 FMC_HPC1_LA01_CC_N
+set_property -dict {PACKAGE_PIN AE4  IOSTANDARD LVCMOS18 PULLUP true} [get_ports rmii_rx_dv_a]                ; ## H14 FMC_HPC1_LA07_N
+set_property -dict {PACKAGE_PIN AE5  IOSTANDARD LVCMOS18 PULLUP true} [get_ports mac_if_sel_0_a]              ; ## G06 FMC_HPC1_LA00_CC_P
 set_property -dict {PACKAGE_PIN AD2  IOSTANDARD LVCMOS18} [get_ports {rmii_rxd_a[0]}]              ; ## H07 FMC_HPC1_LA02_P
 set_property -dict {PACKAGE_PIN AD1  IOSTANDARD LVCMOS18} [get_ports {rmii_rxd_a[1]}]              ; ## H08 FMC_HPC1_LA02_N
 set_property -dict {PACKAGE_PIN AD4  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports rmii_tx_en_a]       ; ## H13 FMC_HPC1_LA07_P
@@ -20,8 +21,9 @@ set_property -dict {PACKAGE_PIN AG8  IOSTANDARD LVCMOS18} [get_ports led_al_c_c2
 set_property -dict {PACKAGE_PIN AH8  IOSTANDARD LVCMOS18} [get_ports led_al_a_c2m]                 ; ## D18 FMC_HPC1_LA13_N
 
 set_property -dict {PACKAGE_PIN Y5   IOSTANDARD LVCMOS18} [get_ports rmii_rx_ref_clk_b]            ; ## D20 FMC_HPC1_LA17_CC_P
-set_property -dict {PACKAGE_PIN AA5  IOSTANDARD LVCMOS18} [get_ports rmii_rx_er_b]                 ; ## D21  FMC_HPC1_LA17_CC_N
-set_property -dict {PACKAGE_PIN AH11 IOSTANDARD LVCMOS18} [get_ports rmii_rx_dv_b]                 ; ## H29 FMC_HPC1_LA24_N
+set_property -dict {PACKAGE_PIN AA5  IOSTANDARD LVCMOS18} [get_ports rmii_rx_er_b]                 ; ## D21 FMC_HPC1_LA17_CC_N
+set_property -dict {PACKAGE_PIN AH11 IOSTANDARD LVCMOS18 PULLUP true} [get_ports rmii_rx_dv_b]                 ; ## H29 FMC_HPC1_LA24_N
+set_property -dict {PACKAGE_PIN Y8   IOSTANDARD LVCMOS18 PULLUP true} [get_ports mac_if_sel_0_b]               ; ## C22 FMC_HPC1_LA18_CC_P
 set_property -dict {PACKAGE_PIN AA11 IOSTANDARD LVCMOS18} [get_ports {rmii_rxd_b[0]}]              ; ## H22 FMC_HPC1_LA19_P
 set_property -dict {PACKAGE_PIN AA10 IOSTANDARD LVCMOS18} [get_ports {rmii_rxd_b[1]}]              ; ## H23 FMC_HPC1_LA19_N
 set_property -dict {PACKAGE_PIN AH12 IOSTANDARD LVCMOS18 SLEW FAST} [get_ports rmii_tx_en_b]       ; ## H28 FMC_HPC1_LA24_P

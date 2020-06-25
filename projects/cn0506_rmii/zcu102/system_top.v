@@ -53,6 +53,7 @@ module system_top (
   output          rmii_tx_en_a,
   input           link_st_a,
   input           led_0_a,
+  output          mac_if_sel_0_a,
 
   output          reset_b,
   output          mdc_fmc_b,
@@ -65,6 +66,7 @@ module system_top (
   output          rmii_tx_en_b,
   input           link_st_b,
   input           led_0_b,
+  output          mac_if_sel_0_b,
 
   // LEDs
 
@@ -88,6 +90,10 @@ module system_top (
   wire            sys_reset_b;
   wire            gpio_reset_a;
   wire            gpio_reset_b;
+
+
+  assign mac_if_sel_0_a = 1'b1;
+  assign mac_if_sel_0_b = 1'b1;
 
   // port a - right led (activity/status) yellow only
 
